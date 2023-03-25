@@ -1,0 +1,189 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    /* Para responsive de la pagina web que estamos creando  */
+    max-height: 100%;  
+}
+body{
+    font-family: tahoma;
+    font-size: 18px;
+    background-image: url(../IMG/idchapinero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* Seccion maquetacion CSS header  */
+#header{
+    background-color: lightsteelblue;
+    border: 2px solid blue;
+    border-radius: 20px;
+    display: flex;
+    /* El display nos permite manejar el posicionamiento de elementos dentro de un contenedor */
+    flex-direction: row;
+    justify-content: center;
+    /* justify centra horizontalmente */
+    align-items: center;
+    /* alig centra verticalmente */
+    grid-area: header;
+    /* nombre asignado para al contenedor header para CSS GRID   */
+}
+/* Seccion maquetacion CSS nav, es decir vamos a ver el diseño de nav dentro de la página */
+ul{
+    padding: 0;
+    margin: 0 1px;
+}
+li{
+    display: inline;
+    /* En linea pero horizontal */
+    list-style: none;
+    /* quita viñetas o puntitos que hace la lista  */
+    margin: 0 5px;
+    font: bold 12px verdana;
+}
+a{
+    color: white;
+    text-decoration: none;
+    /* Quita subrayado del link  */
+}
+/* maquetacion de barra de navegacion */
+#menu{
+    grid-area: nav;/*ver comentario anterior sobre esta etiqueta, a leer xd*/
+    background-color: blue;
+    border: 2px solid yellowgreen;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* coloca los elmentos del contenedor a lo ancho, ocupa todo el espacio a lo ancho  */
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+}
+/* Estilos buscador web */
+.buscarbox input{
+    height: 25px;
+    width: 0;
+    padding: 0;
+    border-radius: 40px;
+    border: 0;
+    padding-right: 50px;
+    transition: 0.8s ease;
+    /* Esto es para aplicar animación despacio   */
+}
+.buscarbox input:hover{
+    width: 150px;
+    padding-left: 10px;
+    outline: none;
+    /* Este evento funciona cuando se pasa el mouse por encima del campo  */
+
+}
+#main{
+    grid-area: main;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    /* efecto glas difucion de colores */
+    max-width: 100%;
+    height: auto;
+}
+figure{
+    display: inline;
+    margin: 45px;
+    padding: 5px;
+}
+.programa{
+    display: inline-block;
+    /* inline block, quiere decir horizontal y verticalmente */
+    margin: 5px;
+    padding: 5px;
+    width: 40%;
+    /* ancho relativo % */
+    height: 200px;
+    position: relative;
+    /* Para que se pueda desplazar */
+    border: 1px solid black;
+    border-radius: 15px;
+}
+/* seccion maquetacion sidelbar */
+#sidelbar{
+    grid-area: sidelbar;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+}
+iframe{
+    max-width: 100%;
+    height: auto;   
+}
+/* seccion maquetacion footer */
+footer{
+    grid-area: footer;
+    padding-top: 20px;
+    border: 2px solid green;
+    border-radius: 20px;
+    clear: both;
+    /* me elimina los floats */
+    background-color: rgba(255, 255, 255, 0.6)  ;
+    backdrop-filter: blur(5px);
+}
+/* Seccion redes sociales  */
+#redes{
+    padding: 5px;
+    margin: 0;
+}
+#redes a i:hover{
+    transform: scale(1.5);
+    /* animacion de agrandar iconos de redes sociales  */
+}
+/* Seccion de estilos para iconos fontawesome */
+i[class^="fa"]{
+    color: grey;
+    font-size: 18px;
+    /* Busca todas clases con la etiqueta <i> cuya clase comienza por fa  */
+}
+i[class^="fab"]{
+    color: grey;
+    font-size: 30px;
+    border: 1px solid transparent;
+    margin: 0;
+    /* lo mismo pero busca la clase  que comienza por fab */
+}
+/* Seccion estilos iconos hamburguesa */
+.fa-bars{
+    font-size: 30px !important;
+    color: black !important;
+    /* para dar exclusividad al estilo, es decir si hay otro estilo antes, entonces le dará más importancia al estilo important */
+}
+.openmenu{
+    display: none;
+    /* ocultar elmento  */
+    cursor: pointer;
+    /* colocar manito al cursor cuando pase por aqui */
+    font-size: 24px;
+}
+/* *************************************************************************************************************************************************************** */
+/* Desde aqui vamos a ver CSS grid, maquetacion de la página más avanzada, manejar la maquetación estilo rejilla, es decir como si fuera una hoja o una tabla */
+/* Seccion de definición de plantillas con CSS grid */
+/* Vista PC - 3 columnas  */
+#grid-container> * {
+    text-align: center;
+    box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, 0.75);
+}
+#grid-container{
+    display: grid;
+    /* Para manejar cotenedores como estilo rejilla */
+    grid-gap: 10px;
+    grid-template: 
+    "header header header" 150px
+    "nav nav nav" 50px
+    "main main sidelbar " 300px
+    "main main sidelbar" 300px
+    "main main sidelbar" 250px
+    "footer footer footer" 150px /
+    1250px 350px 250px;
+}
