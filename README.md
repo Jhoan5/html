@@ -8,10 +8,16 @@
 2. Create a new file with the `.html` extension, such as `index.html`.
 3. Write "Hello, World!" inside the file and open it in a web browser to see the result.
 
+Or use an editor online like:
+
+- [CodePen](https://codepen.io/)
+- [CodeSandbox](https://codesandbox.io/)
+- Or whatever you prefer.
+
 ## Tags
 
 1. Tags are used with the format `<tagName> content(tags or text) </tagName>`.
-2. The `<tag>` notation indicates that the tag needs to be opened, and `</tag>` indicates that it needs to be closed.
+2. The `<tag>` notation indicates that the tag needs to be opened and it does not need to be closed. `</tag>`. The others need to be closed.
 
 | Group               | Tags                                                               |
 | ------------------- | ------------------------------------------------------------------ |
@@ -28,6 +34,7 @@
 | Character Reference | `&lt;`, `&gt;`, `&amp;`                                            |
 | Comment             | `<!-- comment -->`                                                 |
 | Cite and Quotation  | `q`, `blockquote`, `abbr`, `cite`                                  |
+| Feature Tags        | `dialog`, `progress`, `output`, `search`, `template`               |
 | Deprecated Tags     | `font`, `center`, `u`, `strike`, `applet`, `big`, `small`, `dir`   |
 | Deprecated Tags     | `menu`, `basefont`, `frame`, `frameset`, `isindex`, `blink`        |
 
@@ -61,5 +68,7 @@ _To learn HTML and practice, you might visit some of these resources:_
 
 Thank you for reading. I hope this guide will be helpful to you.
 
-> **Note:** I am not a professional. I am just a learner.
+> [!NOTE]\
+> I am not a professional. I am just a learner.
 > Feel free to colabore to this repository. I will appreciate it.
+> This repository was made with :heart:
